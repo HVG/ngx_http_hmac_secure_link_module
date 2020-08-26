@@ -184,7 +184,7 @@ ngx_http_secure_link_variable(ngx_http_request_t *r,
                 /* Parse timestamp in HTTP Date format RFC7231 - 7.1.1.1
                         https://tools.ietf.org/html/rfc7231#section-7.1.1.1 */
                 if (sscanf((char *)p, "%*[a-zA-Z,] %d %3s %d %d:%d:%d",
-                            (ngx_tm_mday_t *) &mday, (char M[4] *) &M,
+                            (ngx_tm_mday_t *) &mday, (char[4] *) &M,
                             (ngx_tm_year_t *) &year,(ngx_tm_hour_t *) &hour,
                             (ngx_tm_min_t *) &min, (ngx_tm_sec_t *) &sec) < 5) {
                                 goto not_found;
